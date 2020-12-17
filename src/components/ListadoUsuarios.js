@@ -6,6 +6,7 @@ import { useRecoilValue } from 'recoil';
 import { todosLosUsuarios } from '../state/usuarios';
 import { Divider, Grid } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
+import { DateTime } from 'luxon';
 
 const useStyles = makeStyles(() => ({
   alert: {
@@ -15,6 +16,12 @@ const useStyles = makeStyles(() => ({
     fontSize: 15,
   },
 }));
+
+function fechaFormatoHumano(fecha) {
+  return DateTime.fromISO(fecha)
+    .setLocale('es')
+    .toLocaleString(DateTime.DATE_FULL);
+}
 
 export default function ListadoUsuarios() {
   const classes = useStyles();
@@ -31,7 +38,9 @@ export default function ListadoUsuarios() {
             <ListItem key={it.id} alignItems="flex-start">
               <ListItemText
                 primary={`${it.apellido}, ${it.nombre}`}
-                secondary={it.fechaNacimiento}
+                secondary={`Nació el ${fechaFormatoHumano(
+                  it.fechaNacimiento
+                )}.`}
               />
             </ListItem>
             <Divider variant="inset" component="li" />
