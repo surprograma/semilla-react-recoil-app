@@ -4,11 +4,23 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { useRecoilValue } from 'recoil';
 import { todosLosUsuarios } from '../state/usuarios';
-import { Divider, Grid } from '@material-ui/core';
+import {
+  Avatar,
+  Divider,
+  Grid,
+  IconButton,
+  ListItemAvatar,
+  ListItemSecondaryAction,
+} from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import { DateTime } from 'luxon';
+import { AssignmentInd } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
+  root: {
+    flexGrow: 1,
+  },
   alert: {
     width: '100%',
   },
@@ -32,18 +44,34 @@ export default function ListadoUsuarios() {
       <Alert severity="info" className={classes.alert}>
         Los usuarios que están más abajo vienen de la API.
       </Alert>
-      <List>
-        {usuarios.map((it) => (
+      <List className={classes.root}>
+        {usuarios.map((it, index) => (
           <>
             <ListItem key={it.id} alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar src={it.avatarUrl} />
+              </ListItemAvatar>
               <ListItemText
                 primary={`${it.apellido}, ${it.nombre}`}
                 secondary={`Nació el ${fechaFormatoHumano(
                   it.fechaNacimiento
                 )}.`}
               />
+              <ListItemSecondaryAction>
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  component={Link}
+                  to={`/usuarios/${it.id}`}
+                >
+                  <AssignmentInd />
+                </IconButton>
+              </ListItemSecondaryAction>
             </ListItem>
-            <Divider variant="inset" component="li" />
+            {/* Hack para que no muestre el divider en el último elemento */}
+            {index !== usuarios.length - 1 && (
+              <Divider variant="inset" component="li" />
+            )}
           </>
         ))}
       </List>

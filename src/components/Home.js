@@ -1,10 +1,8 @@
 import {
-  Box,
   Button,
   Card,
   CardContent,
   CircularProgress,
-  Container,
   Grid,
   makeStyles,
   Typography,
@@ -65,14 +63,12 @@ function ClonarProyecto() {
 
 export default function Home() {
   return (
-    <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" gutterBottom>
-          Repositorio semilla React - Recoil - Material UI
-        </Typography>
-        <EjemploApi />
-        <ClonarProyecto />
-      </Box>
-    </Container>
+    <>
+      <Typography variant="h4" gutterBottom>
+        Repositorio semilla React - Recoil - Material UI
+      </Typography>
+      <EjemploApi />
+      <ClonarProyecto />
+    </>
   );
 }
