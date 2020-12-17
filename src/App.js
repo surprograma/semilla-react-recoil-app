@@ -54,7 +54,7 @@ function ClonarProyecto() {
         <Button
           variant="contained"
           color="primary"
-          href="https://github.com/unahur-desapp/react-recoil-seed/generate"
+          href="https://github.com/unahur-desapp/react-recoil-app-seed/generate"
         >
           ¡Quiero crear mi proyecto!
         </Button>
