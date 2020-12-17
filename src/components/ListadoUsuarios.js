@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import { DateTime } from 'luxon';
-import { AssignmentInd } from '@material-ui/icons';
+import { Face } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
@@ -64,7 +64,7 @@ export default function ListadoUsuarios() {
                   component={Link}
                   to={`/usuarios/${it.id}`}
                 >
-                  <AssignmentInd />
+                  <Face />
                 </IconButton>
               </ListItemSecondaryAction>
             </ListItem>
