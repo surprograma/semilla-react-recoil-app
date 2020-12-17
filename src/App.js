@@ -3,35 +3,75 @@ import {
   Button,
   Card,
   CardContent,
+  CircularProgress,
   Container,
   Grid,
+  makeStyles,
   Typography,
 } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
+import { Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 import ListadoUsuarios from './components/ListadoUsuarios';
 import ProTip from './ProTip';
+
+const useStyles = makeStyles(() => ({
+  card: {
+    marginTop: '20px',
+  },
+}));
+
+function EjemploApi() {
+  const classes = useStyles();
+
+  return (
+    <Card className={classes.card}>
+      <Suspense fallback={<CircularProgress />}>
+        <ErrorBoundary
+          fallback={
+            <Alert severity="warning">
+              No pudimos cargar los usuarios. ¿Levantaste la API?{' '}
+              <span role="img" aria-label="thinking">
+                🤔
+              </span>
+            </Alert>
+          }
+        >
+          <CardContent>
+            <ListadoUsuarios />
+          </CardContent>
+        </ErrorBoundary>
+      </Suspense>
+    </Card>
+  );
+}
+
+function ClonarProyecto() {
+  return (
+    <>
+      <ProTip />
+      <Grid container justify="center">
+        <Button
+          variant="contained"
+          color="primary"
+          href="https://github.com/unahur-desapp/react-recoil-seed/generate"
+        >
+          ¡Quiero crear mi proyecto!
+        </Button>
+      </Grid>
+    </>
+  );
+}
 
 export default function App() {
   return (
     <Container maxWidth="sm">
       <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h4" gutterBottom>
           Repositorio semilla React - Recoil - Material UI
         </Typography>
-        <ProTip />
-        <Grid container justify="center">
-          <Button
-            variant="contained"
-            color="primary"
-            href="https://github.com/unahur-desapp/react-recoil-seed/generate"
-          >
-            Crear proyecto
-          </Button>
-        </Grid>
-        <Card>
-          <CardContent>
-            <ListadoUsuarios />
-          </CardContent>
-        </Card>
+        <EjemploApi />
+        <ClonarProyecto />
       </Box>
     </Container>
   );

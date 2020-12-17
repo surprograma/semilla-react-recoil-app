@@ -2,18 +2,9 @@ import { selector } from 'recoil';
 
 export const todosLosUsuarios = selector({
   key: 'usuarios',
-  get: () => [
-    {
-      nombre: 'Andrea',
-      apellido: 'Sierra',
-      fechaNacimiento: '1985-08-30',
-      id: 1,
-    },
-    {
-      nombre: 'Federico',
-      apellido: 'Aloi',
-      fechaNacimiento: '1991-10-30',
-      id: 2,
-    },
-  ],
+  get: async () => {
+    const response = await fetch('http://localhost:3001/api/usuarios');
+    const json = await response.json();
+    return json.data;
+  },
 });

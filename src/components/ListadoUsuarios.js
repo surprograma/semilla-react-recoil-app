@@ -4,7 +4,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { useRecoilValue } from 'recoil';
 import { todosLosUsuarios } from '../state/usuarios';
-import { Divider, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
     maxWidth: '36ch',
   },
   title: {
-    fontSize: 16,
+    fontSize: 15,
   },
 }));
 
@@ -21,9 +21,9 @@ export default function ListadoUsuarios() {
   const usuarios = useRecoilValue(todosLosUsuarios);
 
   return (
-    <>
+    <Grid container>
       <Typography className={classes.title} color="textSecondary" gutterBottom>
-        Los usuarios listados más abajo vienen de la API.
+        Los usuarios que están más abajo vienen de la API.
       </Typography>
       <List className={classes.root}>
         {usuarios.map((it) => (
@@ -38,6 +38,6 @@ export default function ListadoUsuarios() {
           </>
         ))}
       </List>
-    </>
+    </Grid>
   );
 }
