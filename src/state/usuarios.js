@@ -1,7 +1,9 @@
 import { selector, selectorFamily } from 'recoil';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 async function getJsonFromApi(path) {
-  const response = await fetch(`http://localhost:3001/api/${path}`);
+  const response = await fetch(`${apiUrl}/${path}`);
   return response.json();
 }
 
