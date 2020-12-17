@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Button, Container, Grid, Typography } from '@material-ui/core';
+import ProTip from './ProTip';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm">
+      <Box my={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Repositorio semilla React - Recoil - Material UI
+        </Typography>
+        <ProTip />
+        <Grid container justify="center">
+          <Button variant="contained" color="primary" href="https://github.com/unahur-desapp/react-recoil-seed/generate">
+            Crear proyecto
+          </Button>
+        </Grid>
+      </Box>
+    </Container>
   );
 }
-
-export default App;
