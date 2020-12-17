@@ -10,7 +10,11 @@ export default function App() {
         </Typography>
         <ProTip />
         <Grid container justify="center">
-          <Button variant="contained" color="primary" href="https://github.com/unahur-desapp/react-recoil-seed/generate">
+          <Button
+            variant="contained"
+            color="primary"
+            href="https://github.com/unahur-desapp/react-recoil-seed/generate"
+          >
             Crear proyecto
           </Button>
         </Grid>

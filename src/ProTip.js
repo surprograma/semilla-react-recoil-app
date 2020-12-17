@@ -25,7 +25,10 @@ export default function ProTip() {
     <Typography className={classes.root} color="textSecondary">
       <LightBulbIcon className={classes.lightBulb} />
       Pro tip: Podés leer la{' '}
-      <Link href="https://github.com/unahur-desapp/react-recoil-seed">documentación</Link> completa en el README.
+      <Link href="https://github.com/unahur-desapp/react-recoil-seed">
+        documentación
+      </Link>{' '}
+      completa en el README.
     </Typography>
   );
 }
