@@ -4,12 +4,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from './theme';
+import { RecoilRoot } from 'recoil';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <React.StrictMode>
       <CssBaseline />
-      <App />
+      <RecoilRoot>
+        <App />
+      </RecoilRoot>
     </React.StrictMode>
   </ThemeProvider>,
   document.getElementById('root')

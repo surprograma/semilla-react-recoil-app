@@ -1,4 +1,13 @@
-import { Box, Button, Container, Grid, Typography } from '@material-ui/core';
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Typography,
+} from '@material-ui/core';
+import ListadoUsuarios from './components/ListadoUsuarios';
 import ProTip from './ProTip';
 
 export default function App() {
@@ -18,6 +27,11 @@ export default function App() {
             Crear proyecto
           </Button>
         </Grid>
+        <Card>
+          <CardContent>
+            <ListadoUsuarios />
+          </CardContent>
+        </Card>
       </Box>
     </Container>
   );
