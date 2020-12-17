@@ -4,12 +4,12 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { useRecoilValue } from 'recoil';
 import { todosLosUsuarios } from '../state/usuarios';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 
 const useStyles = makeStyles(() => ({
-  root: {
+  alert: {
     width: '100%',
-    maxWidth: '36ch',
   },
   title: {
     fontSize: 15,
@@ -22,10 +22,10 @@ export default function ListadoUsuarios() {
 
   return (
     <Grid container>
-      <Typography className={classes.title} color="textSecondary" gutterBottom>
+      <Alert severity="info" className={classes.alert}>
         Los usuarios que están más abajo vienen de la API.
-      </Typography>
-      <List className={classes.root}>
+      </Alert>
+      <List>
         {usuarios.map((it) => (
           <>
             <ListItem key={it.id} alignItems="flex-start">
