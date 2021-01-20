@@ -11,7 +11,7 @@
 
 Para crear un proyecto siguiendo esta plantilla, lo único que tenés que hacer es clickear en el botón que dice `Use this template`. ¡Y no te olvides de cambiarle el nombre en el `package.json`!
 
-Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
+:information_source: Este proyecto fue creado con [Create React App](https://create-react-app.dev/), y por lo tanto toda la documentación del sitio oficial también puede consultarse para saber más.
 
 ## :point_up: Prerrequisitos - para instalar antes de empezar
 
@@ -36,6 +36,17 @@ cp .env.example .env
 
 # Instala las dependencias Node del proyecto.
 npm install
+```
+
+## :file_folder: Estructura de directorios
+
+Breve descripción de qué se puede encontrar en cada uno de los directorios del proyecto:
+
+```shell
+├── public                  # Index, favicon y otros archivos comunes
+└── src
+    ├── components          # Componentes de React
+    └── state               # Selectores y átomos de Recoil
 ```
 
 ## :woman_technologist: :man_technologist: Comandos útiles para el día a día
