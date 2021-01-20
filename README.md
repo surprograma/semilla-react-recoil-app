@@ -1,4 +1,6 @@
-# Repositorio semilla: aplicación React
+# Repositorio semilla: aplicación React :seedling:
+
+> Este es uno de los repositorios que utilizamos en la serie **Tu primera aplicación full stack: NodeJS + React**, [disponible en YouTube](https://www.youtube.com/playlist?list=PL7q-McYJyHlgVGQIRYVKl381twyJ4XM_h). Te recomendamos que mires la serie para entender un poco más sobre las tecnologías que utilizamos acá. :smiley:
 
 ¡Bienvenida/o! En este repositorio encontrarás una plantilla (de las infinitas posibles) para crear una aplicación web con React. Las principales tecnologías que utilizamos son:
 
@@ -11,7 +13,7 @@ Para crear un proyecto siguiendo esta plantilla, lo único que tenés que hacer 
 
 Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Prerrequisitos - para instalar antes de empezar
+## :point_up: Prerrequisitos - para instalar antes de empezar
 
 Vas a necesitar un IDE o al menos un editor de texto que coloree la sintaxis. Recomendamos utilizar [Visual Studio Code](https://code.visualstudio.com/) - que se lleva muy bien con proyectos JavaScript - enriquecido con los siguientes plugins:
 
@@ -24,7 +26,7 @@ Para ejecutar el código es necesario tener NodeJS en su versión 14 (`lts/fermi
 
 El ejemplo viene preparado para ser ejecutado junto a una API, que puede crearse desde [este repositorio](https://github.com/unahur-desapp/nodejs-api-seed).
 
-## Configuración inicial del proyecto
+## :ballot_box_with_check: Configuración inicial del proyecto
 
 Asumiendo que ya configuraste todos los prerrequisitos y que vas a utilizar Docker, estos son los comandos que deberías ejecutar la primera vez que trabajes en el proyecto:
 
@@ -36,7 +38,7 @@ cp .env.example .env
 npm install
 ```
 
-## Comandos útiles para el día a día
+## :woman_technologist: :man_technologist: Comandos útiles para el día a día
 
 A continuación, algunos comandos necesarios para el desarrollo diario en este proyecto.
 
@@ -50,6 +52,6 @@ npm start
 npm test
 ```
 
-## Despliegue
+## :rocket: Despliegue
 
 Para publicar en Heroku, seguir esta guía: https://blog.heroku.com/deploying-react-with-zero-configuration.
