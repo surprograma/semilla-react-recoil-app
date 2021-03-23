@@ -60,7 +60,7 @@ export default function ListadoUsuarios() {
               <ListItemSecondaryAction>
                 <IconButton
                   edge="end"
-                  aria-label="delete"
+                  aria-label="user details"
                   component={Link}
                   to={`/usuarios/${it.id}`}
                 >
