@@ -14,5 +14,5 @@ export const todosLosUsuarios = selector({
 
 export const usuarioPorId = selectorFamily({
   key: 'usuarioPorId',
-  get: (id) => async () => await getJsonFromApi(`usuarios/${id}`),
+  get: (id) => async () => (await getJsonFromApi(`usuarios/${id}`)).data,
 });
