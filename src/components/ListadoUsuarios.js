@@ -46,8 +46,8 @@ export default function ListadoUsuarios() {
       </Alert>
       <List className={classes.root}>
         {usuarios.map((it, index) => (
-          <>
-            <ListItem key={it.id} alignItems="flex-start">
+          <div key={it.id}>
+            <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar src={it.avatarUrl} />
               </ListItemAvatar>
@@ -71,7 +71,7 @@ export default function ListadoUsuarios() {
             {index !== usuarios.length - 1 && (
               <Divider variant="inset" component="li" />
             )}
-          </>
+          </div>
         ))}
       </List>
     </Grid>
